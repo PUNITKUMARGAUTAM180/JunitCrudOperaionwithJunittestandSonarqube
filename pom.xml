@@ -71,4 +71,44 @@
 		</plugins>
 	</build>
 
+	<profiles>
+		<!--   profile for local same as dev  -->
+		<profile>
+			<id>dev</id>
+			<properties>
+				<activatedProperties>dev</activatedProperties>
+			</properties>
+			<build>
+				<finalName>${project.artifactId}-dev</finalName>
+				<filters>
+					<filter>src/main/resources/application-dev.properties</filter>
+				</filters>
+			</build>
+		</profile>
+		<profile>
+			<id>qa</id>
+			<properties>
+				<activatedProperties>qa</activatedProperties>
+			</properties>
+			<build>
+				<finalName>${project.artifactId}-qa</finalName>
+				<filters>
+					<filter>src/main/resources/application-qa.properties</filter>
+				</filters>
+			</build>
+		</profile>
+		<profile>
+			<id>uat</id>
+			<properties>
+				<activatedProperties>uat</activatedProperties>
+			</properties>
+			<build>
+				<finalName>${project.artifactId}-uat</finalName>
+				<filters>
+					<filter>src/main/resources/application-uat.properties</filter>
+				</filters>
+			</build>
+		</profile>
+	</profiles>
+
 </project>
